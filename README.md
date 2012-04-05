@@ -6,6 +6,7 @@
     puts TagCloudBase.new(all_tags).to_dynarex.to_xml pretty: true
 
 output:
+
     <?xml version='1.0' encoding='UTF-8'?>
     <tags>
       <summary>
