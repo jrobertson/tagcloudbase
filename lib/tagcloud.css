@@ -1,0 +1,23 @@
+/* file: tag_cloud.css */
+
+.tag {
+  font-family: Arial,'Luxi Sans', Helvetica, Impact; line-height: 2em
+}
+  .tag a {background-color: #444; padding: 0.3em; margin: 0.9em 0.2em;}
+  .tag a:link {background-color: #000; color: #fff; text-decoration: none}
+  .tag a:visited {background-color: #555;}
+  .tag a:hover {background-color: #000; text-decoration: none; color: #ccc}
+  .tag a:active {background-color: #666;}
+  .tag a:focus {background-color: #666;}
+
+  .s1 { background-color: transparent; color: #123; font-size: 1.13em }
+  .s2 { background-color: transparent; color: #123; font-size: 1.36em }
+  .s3 { background-color: transparent; color: #123; font-size: 1.59em }
+  .s4 { background-color: transparent; color: #123; font-size: 1.82em; font-weight: 300 }
+  .s5 { background-color: transparent; color: #123; font-size: 2.05em; font-weight: 400 }
+  .s6 { background-color: transparent; color: #123; font-size: 2.28em; font-weight: 500 }
+  .s7 { background-color: transparent; color: #123; font-size: 2.51em; font-weight: 600 }
+  .s8 { background-color: transparent; color: #123; font-size: 2.74em; font-weight: 700 }
+  .s9 { background-color: transparent; color: #123; font-size: 2.9em; font-weight: 800 }
+  .s10 { background-color: transparent; color: #123; font-size: 3.2em; font-weight: 900}
+
