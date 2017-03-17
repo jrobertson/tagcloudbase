@@ -29,8 +29,8 @@ class TagCloudBase
   def to_webpage()
     
     lib = File.dirname(__FILE__)
-    xsl = open(lib + '/tagcloud.xsl','UserAgent' => 'TagCloudBase').read
-    css = open(lib + '/tagcloud.css','UserAgent' => 'TagCloudBase').read
+    xsl = open(lib + '/tagcloud.xsl').read
+    css = open(lib + '/tagcloud.css').read
     
     html = Rexslt.new(@xsl || xsl, @to_dynarex.to_xml).to_s
     return {html: html, css: css}
