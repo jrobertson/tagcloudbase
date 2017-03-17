@@ -4,8 +4,10 @@
 
 require 'dynarex'
 require 'rexslt'
+require 'nokogiri'
 
 class TagCloudBase
+
 
   attr_reader :to_dynarex
   attr_accessor :xsl
