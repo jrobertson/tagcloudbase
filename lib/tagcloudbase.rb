@@ -11,12 +11,14 @@ class TagCloudBase
   attr_accessor :xsl
 
   def initialize(all_tags={})
+    
     tags = all_tags.sort_by {|x| -x[-1][-1].to_i}
     biggest_tag = tags.first[-1][-1].to_i
     # sort in alphabetical order
     abc_tags = tags.sort_by &:first
 
     @to_dynarex = Dynarex.new('tags/tag(word,href,gauge,count)')
+    
     abc_tags.each do |word, v|
       href, word_size = v
       weight = 100 / (biggest_tag / word_size.to_i)
@@ -24,15 +26,19 @@ class TagCloudBase
       gauge = 8 if gauge > 8
       @to_dynarex.create word: word, href: href, gauge: gauge.to_s, count: word_size
     end
+    
   end
   
   def to_webpage()
     
     lib = File.dirname(__FILE__)
-    xsl = open(lib + '/tagcloud.xsl').read
-    css = open(lib + '/tagcloud.css').read
-    
-    html = Rexslt.new(@xsl || xsl, @to_dynarex.to_xml).to_s
+    xsl = File.read lib + '/tagcloud.xsl'
+    css = File.read lib + '/tagcloud.css'
+
+    doc   = Nokogiri::XML(@to_dynarex.to_xml)
+    xslt  = Nokogiri::XSLT(@xsl || xsl)    
+    html = xslt.transform(Nokogiri::XML(@to_dynarex.to_xml))
+
     return {html: html, css: css}
   end
 

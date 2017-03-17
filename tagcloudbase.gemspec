@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'tagcloudbase'
-  s.version = '0.1.5'
+  s.version = '0.1.6'
   s.summary = 'Build a tagcloud from a Dynarex document'
   s.authors = ['James Robertson']
   s.files = Dir['lib/**/*']
